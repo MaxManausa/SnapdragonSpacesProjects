@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SnapdragonSpacesHelloCube.unity
+    guid: 438cda2072ab8ef47812cdd617ef1f35
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 40ee9f05906587e41affe4f097f8b80e, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 2ef7c6959f0be604b90392c6150f697b, type: 2}
