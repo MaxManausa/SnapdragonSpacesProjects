@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.qualcomm.qcht.unity.interactions": "file:SnapdragonSpaces/com.qualcomm.qcht.unity.interactions-4.1.5.tgz",
     "com.qualcomm.snapdragon.spaces": "file:SnapdragonSpaces/com.qualcomm.snapdragon.spaces-0.21.0.tgz",
     "com.unity.collab-proxy": "1.17.7",
     "com.unity.feature.development": "1.0.1",
