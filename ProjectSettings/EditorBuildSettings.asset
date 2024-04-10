@@ -6,44 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Samples/Snapdragon Spaces/0.21.0/Core Samples/Scenes/Main Menu/Main
-      Menu.unity
-    guid: 2b406ea90420fc841839c843c6bfc3d5
-  - enabled: 1
-    path: Assets/Samples/Snapdragon Spaces/0.21.0/Core Samples/Scenes/Anchor Sample/Anchor
-      Sample.unity
-    guid: a6e56af4472621b45b91380052443a24
-  - enabled: 1
-    path: Assets/Samples/Snapdragon Spaces/0.21.0/Core Samples/Scenes/Camera Frame
-      Access Sample/Camera Frame Access Sample.unity
-    guid: 7baa3e9f6af898949bb40acf3ab781df
-  - enabled: 1
-    path: Assets/Samples/Snapdragon Spaces/0.21.0/Core Samples/Scenes/Hit Testing
-      Sample/Hit Testing Sample.unity
-    guid: c583c7f614816bd489b3bcd62bf9aac0
-  - enabled: 1
-    path: Assets/Samples/Snapdragon Spaces/0.21.0/Core Samples/Scenes/Image Tracking
-      Sample/Image Tracking Sample.unity
-    guid: 61f68fcb03f5e2640b757852c008c89a
-  - enabled: 1
-    path: Assets/Samples/Snapdragon Spaces/0.21.0/Core Samples/Scenes/Plane Detection
-      Sample/Plane Detection Sample.unity
-    guid: 46111d8efce134ef38f645e0c00e1362
-  - enabled: 1
-    path: Assets/Samples/Snapdragon Spaces/0.21.0/Core Samples/Scenes/QR Code Tracking/QR
-      Code Tracking Sample.unity
-    guid: c4df41c43ad0e854b9a08655e3103600
-  - enabled: 1
-    path: Assets/Samples/Snapdragon Spaces/0.21.0/Core Samples/Scenes/Spatial Meshing
-      Sample/Spatial Meshing Sample.unity
-    guid: f218a55ed2e2741418ef6f380d60db57
-  - enabled: 1
-    path: Assets/Samples/Snapdragon Spaces/0.21.0/Core Samples/Scenes/XR Interaction
-      Toolkit Sample/XR Interaction Toolkit Sample.unity
-    guid: 457c784199db14427a9e59e7acbf15a2
-  - enabled: 1
-    path: Assets/Samples/QCHT Unity Interactions/4.1.5/QCHT Samples/Menu/Scenes/QCHT
-      Sample - Menu Spaces.unity
+    path: Assets/Scenes/QCHT Sample - Menu Spaces.unity
     guid: e912dae14d6ed419a9609446460e40cf
   - enabled: 1
     path: Assets/Samples/QCHT Unity Interactions/4.1.5/QCHT Samples/Proximal/Scenes/QCHT
