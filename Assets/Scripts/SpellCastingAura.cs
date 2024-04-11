@@ -28,6 +28,8 @@ public class SpellCastingAura : MonoBehaviour
     private bool isLeftHandGrabbing = false;
     private bool isRightHandGrabbing = false;
 
+    public int spellLevel;
+
     private void Awake()
     {
         leftHandGrabAction.action.Enable();
@@ -58,6 +60,7 @@ public class SpellCastingAura : MonoBehaviour
     private void OnHandGrabPerformed(InputAction.CallbackContext context)
     {
         spellChargeTimer.Restart(); // Start or restart the timer
+        spellLevel = 0;
 
         if (context.action == leftHandGrabAction.action)
         {
@@ -108,7 +111,7 @@ public class SpellCastingAura : MonoBehaviour
         }
     }
 
-    private void UpdateAuras()
+    public void UpdateAuras()
     {
         double elapsedTime = spellChargeTimer.Elapsed.TotalSeconds;
 
@@ -116,14 +119,17 @@ public class SpellCastingAura : MonoBehaviour
         if (elapsedTime < 2)
         {
             ActivateAura(isLeftHandGrabbing ? L_SmAura : null, isRightHandGrabbing ? R_SmAura : null);
+            spellLevel = 1;
         }
         else if (elapsedTime < 5)
         {
             ActivateAura(isLeftHandGrabbing ? L_MeAura : null, isRightHandGrabbing ? R_MeAura : null);
+            spellLevel = 2;
         }
-        else
+        else if (elapsedTime >= 5)
         {
             ActivateAura(isLeftHandGrabbing ? L_LaAura : null, isRightHandGrabbing ? R_LaAura : null);
+            spellLevel = 3;
         }
     }
 
