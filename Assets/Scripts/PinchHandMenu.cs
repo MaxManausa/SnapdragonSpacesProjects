@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Diagnostics; // For Stopwatch
 
 public class PinchHandMenu : MonoBehaviour
 {
@@ -10,10 +11,11 @@ public class PinchHandMenu : MonoBehaviour
     public Transform leftHandMenuLocation;
     public Transform rightHandMenuLocation;
 
-    [Header("Hand Menu")]
-    public GameObject handMenu;
+    [Header("Hand Menus")]
+    public GameObject leftHandMenu;
+    public GameObject rightHandMenu;
 
-    private System.Diagnostics.Stopwatch pinchTimer; // Timer to track pinch duration
+    private Stopwatch pinchTimer = new Stopwatch();
     private bool isLeftHandPinching = false;
     private bool isRightHandPinching = false;
 
@@ -21,8 +23,6 @@ public class PinchHandMenu : MonoBehaviour
     {
         leftHandPinchAction.action.Enable();
         rightHandPinchAction.action.Enable();
-
-        pinchTimer = new System.Diagnostics.Stopwatch(); // Initialize the stopwatch
     }
 
     private void OnEnable()
@@ -44,50 +44,55 @@ public class PinchHandMenu : MonoBehaviour
         rightHandPinchAction.action.Disable();
     }
 
-    private void OnHandPinchPerformed(InputAction.CallbackContext situation)
+    private void OnHandPinchPerformed(InputAction.CallbackContext context)
     {
-
-
-        if (situation.action == leftHandPinchAction.action)
+        if (context.action == leftHandPinchAction.action)
         {
             isLeftHandPinching = true;
-            isRightHandPinching = false;
         }
-        else if (situation.action == rightHandPinchAction.action)
+        else if (context.action == rightHandPinchAction.action)
         {
             isRightHandPinching = true;
-            isLeftHandPinching = false;
         }
-        pinchTimer.Restart(); // Start or restart the timer
+
+        if (!pinchTimer.IsRunning)
+        {
+            pinchTimer.Restart();
+        }
     }
 
-    private void OnHandPinchCanceled(InputAction.CallbackContext situation2)
+    private void OnHandPinchCanceled(InputAction.CallbackContext context)
     {
-
         isLeftHandPinching = false;
         isRightHandPinching = false;
-        pinchTimer.Stop(); // Stop the timer
+
+        // Reset and stop the timer when either hand's pinch is released
+        pinchTimer.Reset();
+        pinchTimer.Stop();
     }
 
     private void Update()
     {
-        if (pinchTimer.IsRunning && pinchTimer.Elapsed.TotalSeconds > 3)
+        if (pinchTimer.IsRunning && pinchTimer.Elapsed.TotalSeconds >= 3)
         {
-
+            pinchTimer.Stop(); // Stop the timer to prevent multiple activations
 
             if (isLeftHandPinching)
             {
-                MoveMenuToHand(leftHandMenuLocation);
+                // Deactivate the right hand menu and activate the left
+                rightHandMenu.SetActive(false);
+                MoveMenuToHand(leftHandMenu, leftHandMenuLocation);
             }
             else if (isRightHandPinching)
             {
-                MoveMenuToHand(rightHandMenuLocation);
+                // Deactivate the left hand menu and activate the right
+                leftHandMenu.SetActive(false);
+                MoveMenuToHand(rightHandMenu, rightHandMenuLocation);
             }
-            pinchTimer.Reset(); // Reset the timer to prevent multiple activations
         }
     }
 
-    private void MoveMenuToHand(Transform handLocation)
+    private void MoveMenuToHand(GameObject handMenu, Transform handLocation)
     {
         handMenu.transform.position = handLocation.position;
         handMenu.SetActive(true); // Activate the menu at the new position

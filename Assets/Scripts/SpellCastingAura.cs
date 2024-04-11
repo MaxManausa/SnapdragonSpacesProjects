@@ -24,129 +24,118 @@ public class SpellCastingAura : MonoBehaviour
     public LaunchSpell leftHandSpellLauncher; // Assign in the Inspector
     public LaunchSpell rightHandSpellLauncher; // Assign in the Inspector
 
-    private Stopwatch spellChargeTimer; // Timer to measure spell charge time
-    private bool isLeftHandGrabbing = false;
-    private bool isRightHandGrabbing = false;
+    private Stopwatch leftHandSpellChargeTimer = new Stopwatch();
+    private Stopwatch rightHandSpellChargeTimer = new Stopwatch();
 
-    public int spellLevel;
+    public int leftHandSpellLevel;
+    public int rightHandSpellLevel;
 
     private void Awake()
     {
         leftHandGrabAction.action.Enable();
         rightHandGrabAction.action.Enable();
-
-        spellChargeTimer = new Stopwatch(); // Initialize the stopwatch
     }
 
     private void OnEnable()
     {
-        leftHandGrabAction.action.Enable();
-        rightHandGrabAction.action.Enable();
-
-        leftHandGrabAction.action.performed += OnHandGrabPerformed;
-        leftHandGrabAction.action.canceled += OnHandGrabCanceled;
-        rightHandGrabAction.action.performed += OnHandGrabPerformed;
-        rightHandGrabAction.action.canceled += OnHandGrabCanceled;
+        leftHandGrabAction.action.performed += context => OnHandGrabPerformed(context, true);
+        leftHandGrabAction.action.canceled += context => OnHandGrabCanceled(context, true);
+        rightHandGrabAction.action.performed += context => OnHandGrabPerformed(context, false);
+        rightHandGrabAction.action.canceled += context => OnHandGrabCanceled(context, false);
     }
 
     private void OnDisable()
     {
-        leftHandGrabAction.action.performed -= OnHandGrabPerformed;
-        leftHandGrabAction.action.canceled -= OnHandGrabCanceled;
-        rightHandGrabAction.action.performed -= OnHandGrabPerformed;
-        rightHandGrabAction.action.canceled -= OnHandGrabCanceled;
+        leftHandGrabAction.action.performed -= context => OnHandGrabPerformed(context, true);
+        leftHandGrabAction.action.canceled -= context => OnHandGrabCanceled(context, true);
+        rightHandGrabAction.action.performed -= context => OnHandGrabPerformed(context, false);
+        rightHandGrabAction.action.canceled -= context => OnHandGrabCanceled(context, false);
 
         leftHandGrabAction.action.Disable();
         rightHandGrabAction.action.Disable();
     }
 
-    private void OnHandGrabPerformed(InputAction.CallbackContext context)
+    private void OnHandGrabPerformed(InputAction.CallbackContext context, bool isLeftHand)
     {
-        spellChargeTimer.Restart(); // Start or restart the timer
-        spellLevel = 0;
-
-        if (context.action == leftHandGrabAction.action)
+        if (isLeftHand)
         {
-            isLeftHandGrabbing = true;
+            leftHandSpellChargeTimer.Restart();
         }
-        else if (context.action == rightHandGrabAction.action)
+        else
         {
-            isRightHandGrabbing = true;
+            rightHandSpellChargeTimer.Restart();
         }
-
-        UpdateAuras();
     }
 
-    private void OnHandGrabCanceled(InputAction.CallbackContext context)
+    private void OnHandGrabCanceled(InputAction.CallbackContext context, bool isLeftHand)
     {
-        
+        Stopwatch timer = isLeftHand ? leftHandSpellChargeTimer : rightHandSpellChargeTimer;
+        timer.Stop();
 
-        if (context.action == leftHandGrabAction.action)
+        if (isLeftHand)
         {
+            leftHandSpellLevel = CalculateSpellLevel(leftHandSpellChargeTimer.Elapsed.TotalSeconds);
+            leftHandSpellLauncher.PrepareSpell(true); // Prepare the spell based on the left hand's spell level
+            leftHandSpellLauncher.Launch(); // Launch the spell
             DeactivateAllLeftAuras();
-            isLeftHandGrabbing = false;
-            leftHandSpellLauncher.Launch(); // Launch the spell when the left hand grab is released
         }
-        else if (context.action == rightHandGrabAction.action)
+        else
         {
+            rightHandSpellLevel = CalculateSpellLevel(rightHandSpellChargeTimer.Elapsed.TotalSeconds);
+            rightHandSpellLauncher.PrepareSpell(false); // Prepare the spell based on the right hand's spell level
+            rightHandSpellLauncher.Launch(); // Launch the spell
             DeactivateAllRightAuras();
-            isRightHandGrabbing = false;
-            rightHandSpellLauncher.Launch(); // Launch the spell when the right hand grab is released
         }
-
-        spellChargeTimer.Stop(); // Stop the timer
     }
 
     private void Update()
     {
         if (handTrackingManager != null && handTrackingManager.LeftHand != null && handTrackingManager.RightHand != null)
         {
-            if (spellChargeTimer.IsRunning)
-            {
-                UpdateAuras();
-            }
-
-            UpdateAuraPositionAndRotation(L_SmAura, handTrackingManager.LeftHand.transform);
-            UpdateAuraPositionAndRotation(L_MeAura, handTrackingManager.LeftHand.transform);
-            UpdateAuraPositionAndRotation(L_LaAura, handTrackingManager.LeftHand.transform);
-
-            UpdateAuraPositionAndRotation(R_SmAura, handTrackingManager.RightHand.transform);
-            UpdateAuraPositionAndRotation(R_MeAura, handTrackingManager.RightHand.transform);
-            UpdateAuraPositionAndRotation(R_LaAura, handTrackingManager.RightHand.transform);
+            UpdateAura(leftHandSpellChargeTimer, true, handTrackingManager.LeftHand.transform);
+            UpdateAura(rightHandSpellChargeTimer, false, handTrackingManager.RightHand.transform);
         }
     }
 
-    public void UpdateAuras()
+    private void UpdateAura(Stopwatch timer, bool isLeftHand, Transform handTransform)
     {
-        double elapsedTime = spellChargeTimer.Elapsed.TotalSeconds;
+        if (!timer.IsRunning) return;
 
-        // Determine which aura to activate based on the elapsed time
-        if (elapsedTime < 2)
-        {
-            ActivateAura(isLeftHandGrabbing ? L_SmAura : null, isRightHandGrabbing ? R_SmAura : null);
-            spellLevel = 1;
-        }
-        else if (elapsedTime < 5)
-        {
-            ActivateAura(isLeftHandGrabbing ? L_MeAura : null, isRightHandGrabbing ? R_MeAura : null);
-            spellLevel = 2;
-        }
-        else if (elapsedTime >= 5)
-        {
-            ActivateAura(isLeftHandGrabbing ? L_LaAura : null, isRightHandGrabbing ? R_LaAura : null);
-            spellLevel = 3;
-        }
-    }
+        int spellLevel = CalculateSpellLevel(timer.Elapsed.TotalSeconds);
+        GameObject smAura = isLeftHand ? L_SmAura : R_SmAura;
+        GameObject meAura = isLeftHand ? L_MeAura : R_MeAura;
+        GameObject laAura = isLeftHand ? L_LaAura : R_LaAura;
 
-    private void ActivateAura(GameObject leftAura, GameObject rightAura)
-    {
         // Deactivate all auras first
-        DeactivateAllLeftAuras();
-        DeactivateAllRightAuras();
+        smAura.SetActive(false);
+        meAura.SetActive(false);
+        laAura.SetActive(false);
 
-        // Then activate the selected ones
-        if (leftAura != null) leftAura.SetActive(true);
-        if (rightAura != null) rightAura.SetActive(true);
+        // Activate the appropriate aura
+        if (spellLevel == 1) smAura.SetActive(true);
+        else if (spellLevel == 2) meAura.SetActive(true);
+        else if (spellLevel >= 3) laAura.SetActive(true);
+
+        // Update the position and rotation of the active aura
+        UpdateAuraPositionAndRotation(smAura, handTransform);
+        UpdateAuraPositionAndRotation(meAura, handTransform);
+        UpdateAuraPositionAndRotation(laAura, handTransform);
+    }
+
+    private int CalculateSpellLevel(double elapsedTime)
+    {
+        if (elapsedTime < 2) return 1;
+        else if (elapsedTime < 5) return 2;
+        else return 3;
+    }
+
+    private void UpdateAuraPositionAndRotation(GameObject aura, Transform handTransform)
+    {
+        if (aura.activeSelf)
+        {
+            aura.transform.position = handTransform.position + handTransform.forward * 0.05f;
+            aura.transform.rotation = handTransform.rotation;
+        }
     }
 
     private void DeactivateAllLeftAuras()
@@ -161,15 +150,5 @@ public class SpellCastingAura : MonoBehaviour
         R_SmAura.SetActive(false);
         R_MeAura.SetActive(false);
         R_LaAura.SetActive(false);
-    }
-
-    private void UpdateAuraPositionAndRotation(GameObject aura, Transform handTransform)
-    {
-        if (aura != null && aura.activeSelf)
-        {
-            Vector3 handPositionOffset = handTransform.position + handTransform.forward * 0.05f;
-            aura.transform.position = handPositionOffset;
-            aura.transform.rotation = handTransform.rotation;
-        }
     }
 }

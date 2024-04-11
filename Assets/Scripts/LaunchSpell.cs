@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LaunchSpell : MonoBehaviour
@@ -10,6 +8,7 @@ public class LaunchSpell : MonoBehaviour
     [SerializeField] private GameObject fireSpell2;
     [SerializeField] private GameObject fireSpell3;
 
+    // Placeholder for additional spells
     /*
     [SerializeField] private GameObject iceSpell1;
     [SerializeField] private GameObject iceSpell2;
@@ -22,47 +21,55 @@ public class LaunchSpell : MonoBehaviour
     [SerializeField] private GameObject gravitySpell3;
     */
 
-    // Assign these in the Unity Inspector
-    public GameObject prefabToLaunch;
     public Transform launchPoint; // The point where the prefab will be instantiated
+    public float launchForce = 10f; // The force applied to the prefab when launched
 
-    // The force applied to the prefab when launched
-    public float launchForce = 10f;
+    private GameObject prefabToLaunch;
+    private int currentSpellLevel;
 
+    // Sets the current spell level and prepares the appropriate spell prefab for launching
+    public void PrepareSpell(bool isLeftHand)
+    {
+        currentSpellLevel = isLeftHand ? spellCasting.leftHandSpellLevel : spellCasting.rightHandSpellLevel;
+        WhichSpell(currentSpellLevel);
+    }
 
     public void Launch()
     {
-        WhichSpell();
+        if (prefabToLaunch == null)
+        {
+            Debug.LogError("No spell prefab set for launching. Call PrepareSpell() first.");
+            return;
+        }
 
-        // Instantiate the prefab at the launchPoint's position and rotation
-        
         GameObject launchedPrefab = Instantiate(prefabToLaunch, launchPoint.position, launchPoint.rotation);
-
-        // Check if the prefab has a Rigidbody component to apply force
         Rigidbody rb = launchedPrefab.GetComponent<Rigidbody>();
         if (rb != null)
         {
-        // Apply a force to launch the prefab
             rb.AddForce(launchPoint.forward * launchForce, ForceMode.VelocityChange);
         }
 
         Destroy(launchedPrefab, 5f);
+        // Reset prefabToLaunch to ensure PrepareSpell() is called before each launch
+        prefabToLaunch = null;
     }
 
-    public void WhichSpell()
+    private void WhichSpell(int spellLevel)
     {
-        // if blank magic, do blank magic
-        if (spellCasting.spellLevel == 1)
+        switch (spellLevel)
         {
-            prefabToLaunch = fireSpell1;
-        }
-        else if (spellCasting.spellLevel == 2)
-        {
-            prefabToLaunch = fireSpell2;
-        }
-        else if (spellCasting.spellLevel == 3)
-        {
-            prefabToLaunch = fireSpell3;
+            case 1:
+                prefabToLaunch = fireSpell1;
+                break;
+            case 2:
+                prefabToLaunch = fireSpell2;
+                break;
+            case 3:
+                prefabToLaunch = fireSpell3;
+                break;
+            default:
+                Debug.LogError("Invalid spell level: " + spellLevel);
+                break;
         }
     }
 }
