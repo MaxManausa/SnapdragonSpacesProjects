@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-// Include the namespace that contains XRHandTrackingManager
 using QCHT.Interactions.Core;
 
 public class SpellCastingAura : MonoBehaviour
@@ -15,6 +14,10 @@ public class SpellCastingAura : MonoBehaviour
 
     // Reference to the XRHandTrackingManager component
     public XRHandTrackingManager handTrackingManager;
+
+    [Header("Spell Launching")]
+    public LaunchSpell leftHandSpellLauncher; // Assign in the Inspector
+    public LaunchSpell rightHandSpellLauncher; // Assign in the Inspector
 
     private void Awake()
     {
@@ -58,19 +61,19 @@ public class SpellCastingAura : MonoBehaviour
         if (context.action == leftHandGrabAction.action)
         {
             L_Aura.SetActive(false);
+            leftHandSpellLauncher.Launch(); // Launch the spell when the left hand grab is released
         }
         else if (context.action == rightHandGrabAction.action)
         {
             R_Aura.SetActive(false);
+            rightHandSpellLauncher.Launch(); // Launch the spell when the right hand grab is released
         }
     }
 
     private void Update()
     {
-        // Ensure the hand tracking manager and hands are not null
         if (handTrackingManager != null && handTrackingManager.LeftHand != null && handTrackingManager.RightHand != null)
         {
-            // Update aura positions and rotations to match the hands, if the auras are active
             if (L_Aura.activeSelf)
             {
                 Vector3 leftHandPositionOffset = handTrackingManager.LeftHand.transform.position + handTrackingManager.LeftHand.transform.forward * 0.05f;

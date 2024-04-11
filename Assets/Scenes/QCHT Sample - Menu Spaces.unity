@@ -746,6 +746,8 @@ MonoBehaviour:
   R_Aura: {fileID: 1646009542}
   L_Aura: {fileID: 503930187}
   handTrackingManager: {fileID: 1457638617}
+  leftHandSpellLauncher: {fileID: 7345535714428660951}
+  rightHandSpellLauncher: {fileID: 7788343653209738609}
 --- !u!1 &503930187
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,7 +761,7 @@ GameObject:
   - component: {fileID: 503930189}
   - component: {fileID: 503930188}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: LeftAura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1711,7 +1713,7 @@ GameObject:
   - component: {fileID: 1646009544}
   - component: {fileID: 1646009543}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: RightAura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3079,6 +3081,7 @@ GameObject:
   - component: {fileID: 3126542653821386460}
   - component: {fileID: 7788343653209738608}
   - component: {fileID: 3093418308207731694}
+  - component: {fileID: 7788343653209738609}
   m_Layer: 0
   m_Name: Hand Controller Right
   m_TagString: Untagged
@@ -3765,6 +3768,7 @@ GameObject:
   - component: {fileID: 4259609467128998168}
   - component: {fileID: 172654304112445880}
   - component: {fileID: 7345535714428660950}
+  - component: {fileID: 7345535714428660951}
   m_Layer: 0
   m_Name: Hand Controller Left
   m_TagString: Untagged
@@ -5060,6 +5064,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handedness: 0
+--- !u!114 &7345535714428660951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4259609467128998175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8874e0385366f0d42a6e4f29240d0a10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToLaunch: {fileID: 4641979177927384613, guid: 3c0e8fe70171ca04395111535173ff54, type: 3}
+  launchPoint: {fileID: 6079891975439604113}
+  launchForce: 10
 --- !u!114 &7788343653209738608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5087,6 +5106,21 @@ MonoBehaviour:
     overrideGroupMembers:
     - {fileID: 3126542654587540684}
     - {fileID: 845809801995219651}
+--- !u!114 &7788343653209738609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3126542653821386461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8874e0385366f0d42a6e4f29240d0a10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToLaunch: {fileID: 984325801592740194, guid: 371b040b83b524d4f8f898819b91774c, type: 3}
+  launchPoint: {fileID: 1487656252988538491}
+  launchForce: 50
 --- !u!4 &8422850121624966130
 Transform:
   m_ObjectHideFlags: 0
