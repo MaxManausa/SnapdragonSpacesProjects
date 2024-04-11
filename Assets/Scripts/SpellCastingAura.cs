@@ -40,6 +40,9 @@ public class SpellCastingAura : MonoBehaviour
 
     private void OnEnable()
     {
+        leftHandGrabAction.action.Enable();
+        rightHandGrabAction.action.Enable();
+
         leftHandGrabAction.action.performed += OnHandGrabPerformed;
         leftHandGrabAction.action.canceled += OnHandGrabCanceled;
         rightHandGrabAction.action.performed += OnHandGrabPerformed;
@@ -76,7 +79,7 @@ public class SpellCastingAura : MonoBehaviour
 
     private void OnHandGrabCanceled(InputAction.CallbackContext context)
     {
-        spellChargeTimer.Stop(); // Stop the timer
+        
 
         if (context.action == leftHandGrabAction.action)
         {
@@ -90,6 +93,8 @@ public class SpellCastingAura : MonoBehaviour
             isRightHandGrabbing = false;
             rightHandSpellLauncher.Launch(); // Launch the spell when the right hand grab is released
         }
+
+        spellChargeTimer.Stop(); // Stop the timer
     }
 
     private void Update()
