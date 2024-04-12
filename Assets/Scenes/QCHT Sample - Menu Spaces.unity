@@ -395,7 +395,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1459755650}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1741107609}
+        m_TargetAssemblyTypeName: SceneControl, Assembly-CSharp
+        m_MethodName: SFX_OnOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &18613249
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,6 +1792,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111559976}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &114730176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 114730177}
+  m_Layer: 0
+  m_Name: R_NoAura
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &114730177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114730176}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.10749368, y: -0.036255114, z: 0.01619646}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1840653268}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &118891370
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,7 +2090,7 @@ Transform:
   - {fileID: 222227400}
   - {fileID: 909716796}
   m_Father: {fileID: 326923244}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &142253414
 GameObject:
@@ -3584,18 +3627,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664646675}
-        m_TargetAssemblyTypeName: QCHT.Samples.Menu.SkinSwitcher, QCHT.Interactions.Samples
-        m_MethodName: SetRightSkin
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 55f20c555bc29534ca6066bf8f73ae71, type: 2}
-          m_ObjectArgumentAssemblyTypeName: QCHT.Interactions.Hands.HandSkin, QCHT.Interactions
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 9019692744713499839}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -5096,7 +5127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_AnchorMin.x
@@ -5104,15 +5135,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 313.55713
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 540.2
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_LocalScale.x
@@ -5156,11 +5187,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 2491.007
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -350.1
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5914,12 +5945,13 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1527403637}
+  - {fileID: 1840653268}
   - {fileID: 327255441}
   - {fileID: 1075919724}
   - {fileID: 1428331525}
   - {fileID: 135534974}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &327255440
 GameObject:
@@ -5956,7 +5988,7 @@ Transform:
   - {fileID: 1096971317}
   - {fileID: 1117186236}
   m_Father: {fileID: 326923244}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &335696458
 GameObject:
@@ -6103,7 +6135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_AnchorMin.x
@@ -6111,15 +6143,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 313.55713
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 540.2
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_LocalScale.x
@@ -6163,11 +6195,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 3618.1213
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -350.1
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8248,18 +8280,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664646675}
-        m_TargetAssemblyTypeName: QCHT.Samples.Menu.SkinSwitcher, QCHT.Interactions.Samples
-        m_MethodName: SetRightSkin
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 55f20c555bc29534ca6066bf8f73ae71, type: 2}
-          m_ObjectArgumentAssemblyTypeName: QCHT.Interactions.Hands.HandSkin, QCHT.Interactions
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 270509951377600996}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -8487,7 +8507,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &439862265
 MonoBehaviour:
@@ -8547,6 +8567,20 @@ MonoBehaviour:
   spellCastingAura: {fileID: 439862265}
   l_SpellLauncher: {fileID: 7345535714428660951}
   r_SpellLauncher: {fileID: 7788343653209738609}
+  handSkinSwitcher: {fileID: 664646675}
+  r_noMagicHand: {fileID: 11400000, guid: 1108f3c5da275504288a16b14e54405a, type: 2}
+  l_noMagicHand: {fileID: 11400000, guid: 9d25e2126dfea5d459ac576914d06b08, type: 2}
+  r_fireHand: {fileID: 11400000, guid: c4a375fb51b4e6b40b3fc725f4f6fa3e, type: 2}
+  l_fireHand: {fileID: 11400000, guid: 838afe4af28a0554584807ee37e92dda, type: 2}
+  r_iceHand: {fileID: 11400000, guid: e96cf6563757dbf4f9aaf79287a31be3, type: 2}
+  l_iceHand: {fileID: 11400000, guid: 0a07d42b444b46d4d9af83fb9a0d06ed, type: 2}
+  r_lightningHand: {fileID: 11400000, guid: ec9a65dbbb264b4429d80275c83dc248, type: 2}
+  l_lightningHand: {fileID: 11400000, guid: 35d76ce1cef623c4e83c90a47e85077b, type: 2}
+  r_gravityHand: {fileID: 11400000, guid: 55f20c555bc29534ca6066bf8f73ae71, type: 2}
+  l_gravityHand: {fileID: 11400000, guid: dc82ac5921fb3394998fde2c2d3590c0, type: 2}
+  noSpell1: {fileID: 8975950362418740035, guid: 20c5ed10915f2a34e849696ad7677d39, type: 3}
+  r_NoAura1: {fileID: 114730176}
+  l_NoAura1: {fileID: 718368057}
   fireSpell1: {fileID: 4641979177927384613, guid: 954ef98e6eb67bc42b6793e0bcfa64b6, type: 3}
   fireSpell2: {fileID: 4641979177927384613, guid: 5b89d3b0c9715df4b9713d6704e50c9e, type: 3}
   fireSpell3: {fileID: 4641979177927384613, guid: da6a132782012484cb68ace9e4deef8a, type: 3}
@@ -8583,6 +8617,8 @@ MonoBehaviour:
   l_GravityAura1: {fileID: 1076930789}
   l_GravityAura2: {fileID: 222227399}
   l_GravityAura3: {fileID: 909716795}
+  r_spellnumber: 0
+  l_spellnumber: 0
 --- !u!1 &444615635
 GameObject:
   m_ObjectHideFlags: 0
@@ -9967,18 +10003,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664646675}
-        m_TargetAssemblyTypeName: QCHT.Samples.Menu.SkinSwitcher, QCHT.Interactions.Samples
-        m_MethodName: SetRightSkin
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: ec9a65dbbb264b4429d80275c83dc248, type: 2}
-          m_ObjectArgumentAssemblyTypeName: QCHT.Interactions.Hands.HandSkin, QCHT.Interactions
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 270509951377600996}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -11122,18 +11146,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664646675}
-        m_TargetAssemblyTypeName: QCHT.Samples.Menu.SkinSwitcher, QCHT.Interactions.Samples
-        m_MethodName: SetRightSkin
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: ec9a65dbbb264b4429d80275c83dc248, type: 2}
-          m_ObjectArgumentAssemblyTypeName: QCHT.Interactions.Hands.HandSkin, QCHT.Interactions
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 9019692744713499839}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -11905,7 +11917,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2107429115}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1741107609}
+        m_TargetAssemblyTypeName: SceneControl, Assembly-CSharp
+        m_MethodName: SFX_OnOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &560781731
 GameObject:
   m_ObjectHideFlags: 0
@@ -12508,7 +12532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_AnchorMin.x
@@ -12516,15 +12540,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 313.55713
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 540.2
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_LocalScale.x
@@ -12568,11 +12592,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 1927.45
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -350.1
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13756,7 +13780,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1268621661}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1741107609}
+        m_TargetAssemblyTypeName: SceneControl, Assembly-CSharp
+        m_MethodName: CloseApp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &649767913
 GameObject:
   m_ObjectHideFlags: 0
@@ -13914,7 +13950,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 830881161}
     m_Modifications:
     - target: {fileID: 249170857773183985, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_IsActive
@@ -13922,27 +13958,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 863705975716917719, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 863705975716917719, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 863705975716917719, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 313.55713
       objectReference: {fileID: 0}
     - target: {fileID: 863705975716917719, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 540.2
       objectReference: {fileID: 0}
     - target: {fileID: 863705975716917719, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 800.3357
       objectReference: {fileID: 0}
     - target: {fileID: 863705975716917719, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -350.1
       objectReference: {fileID: 0}
     - target: {fileID: 1086725511465403087, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -13958,27 +13994,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1646877664372065027, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1646877664372065027, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1646877664372065027, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 313.55713
       objectReference: {fileID: 0}
     - target: {fileID: 1646877664372065027, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 540.2
       objectReference: {fileID: 0}
     - target: {fileID: 1646877664372065027, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 1363.8928
       objectReference: {fileID: 0}
     - target: {fileID: 1646877664372065027, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -350.1
       objectReference: {fileID: 0}
     - target: {fileID: 2199164947849089405, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -14022,19 +14058,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4631302866627244198, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4631302866627244198, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.0045057535
       objectReference: {fileID: 0}
     - target: {fileID: 4631302866627244198, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.12933892
       objectReference: {fileID: 0}
     - target: {fileID: 4631302866627244198, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4631302866627244198, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14042,15 +14078,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4631302866627244198, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4631302866627244198, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4631302866627244198, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4631302866627244198, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14069,6 +14105,10 @@ PrefabInstance:
       value: UI-Menu_Spaces_HandTracking_HorizontalVersion_Custom
       objectReference: {fileID: 0}
     - target: {fileID: 4631302866627244199, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762601134935663544, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -14126,27 +14166,27 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 938e36824c7654e938035c5dc724c573, type: 2}
     - target: {fileID: 8560896520164421829, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8560896520164421829, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8560896520164421829, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 313.55713
       objectReference: {fileID: 0}
     - target: {fileID: 8560896520164421829, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 540.2
       objectReference: {fileID: 0}
     - target: {fileID: 8560896520164421829, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 236.77856
       objectReference: {fileID: 0}
     - target: {fileID: 8560896520164421829, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -350.1
       objectReference: {fileID: 0}
     - target: {fileID: 8767795959752264837, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
       propertyPath: m_IsActive
@@ -14207,6 +14247,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e7f76acbcb4dae87b4930b9c607bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &664646678 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4631302866627244198, guid: 53c5230b4db09d947b3b47f1f56ebc5a, type: 3}
+  m_PrefabInstance: {fileID: 664646669}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &664901044
 GameObject:
   m_ObjectHideFlags: 0
@@ -14797,18 +14842,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664646675}
-        m_TargetAssemblyTypeName: QCHT.Samples.Menu.SkinSwitcher, QCHT.Interactions.Samples
-        m_MethodName: SetLeftSkin
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 838afe4af28a0554584807ee37e92dda, type: 2}
-          m_ObjectArgumentAssemblyTypeName: QCHT.Interactions.Hands.HandSkin, QCHT.Interactions
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 9019692744713499839}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -15163,6 +15196,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717774763}
   m_CullTransparentMesh: 1
+--- !u!1 &718368057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 718368058}
+  m_Layer: 0
+  m_Name: L_NoAura
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &718368058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718368057}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.10749368, y: -0.036255114, z: 0.01619646}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1840653268}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &725145906
 GameObject:
   m_ObjectHideFlags: 0
@@ -16757,6 +16821,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829344270}
   m_CullTransparentMesh: 1
+--- !u!1 &830881160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 830881161}
+  m_Layer: 0
+  m_Name: junk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &830881161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830881160}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0045057535, y: -0.12933892, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 664646678}
+  - {fileID: 1131181567}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &834633364
 GameObject:
   m_ObjectHideFlags: 0
@@ -20856,7 +20953,7 @@ Transform:
   - {fileID: 427814471}
   - {fileID: 111559977}
   m_Father: {fileID: 326923244}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1076930789
 GameObject:
@@ -21959,6 +22056,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125345455}
   m_CullTransparentMesh: 1
+--- !u!4 &1131181567 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7920131059944238717, guid: 356d0ae7fc6154e17a7333aedb7bb0e4, type: 3}
+  m_PrefabInstance: {fileID: 2040760497396083192}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1131476691
 GameObject:
   m_ObjectHideFlags: 0
@@ -23231,7 +23333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_AnchorMin.x
@@ -23239,15 +23341,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 313.55713
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 540.2
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_LocalScale.x
@@ -23291,11 +23393,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 3054.5642
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -350.1
       objectReference: {fileID: 0}
     - target: {fileID: 7129050271811761913, guid: bcfc194e3614b4221ab097757227278c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -25828,18 +25930,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664646675}
-        m_TargetAssemblyTypeName: QCHT.Samples.Menu.SkinSwitcher, QCHT.Interactions.Samples
-        m_MethodName: SetRightSkin
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: e96cf6563757dbf4f9aaf79287a31be3, type: 2}
-          m_ObjectArgumentAssemblyTypeName: QCHT.Interactions.Hands.HandSkin, QCHT.Interactions
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 270509951377600996}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -26101,18 +26191,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664646675}
-        m_TargetAssemblyTypeName: QCHT.Samples.Menu.SkinSwitcher, QCHT.Interactions.Samples
-        m_MethodName: SetLeftSkin
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: dc82ac5921fb3394998fde2c2d3590c0, type: 2}
-          m_ObjectArgumentAssemblyTypeName: QCHT.Interactions.Hands.HandSkin, QCHT.Interactions
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 9019692744713499839}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -26822,7 +26900,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 123982241}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1741107609}
+        m_TargetAssemblyTypeName: SceneControl, Assembly-CSharp
+        m_MethodName: PauseNPlay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1348451407
 GameObject:
   m_ObjectHideFlags: 0
@@ -28463,18 +28553,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664646675}
-        m_TargetAssemblyTypeName: QCHT.Samples.Menu.SkinSwitcher, QCHT.Interactions.Samples
-        m_MethodName: SetRightSkin
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: e96cf6563757dbf4f9aaf79287a31be3, type: 2}
-          m_ObjectArgumentAssemblyTypeName: QCHT.Interactions.Hands.HandSkin, QCHT.Interactions
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 9019692744713499839}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -28839,18 +28917,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664646675}
-        m_TargetAssemblyTypeName: QCHT.Samples.Menu.SkinSwitcher, QCHT.Interactions.Samples
-        m_MethodName: SetLeftSkin
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 35d76ce1cef623c4e83c90a47e85077b, type: 2}
-          m_ObjectArgumentAssemblyTypeName: QCHT.Interactions.Hands.HandSkin, QCHT.Interactions
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 9019692744713499839}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -28922,7 +28988,7 @@ Transform:
   - {fileID: 182388252}
   - {fileID: 1596234011}
   m_Father: {fileID: 326923244}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1430504377
 GameObject:
@@ -29683,18 +29749,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664646675}
-        m_TargetAssemblyTypeName: QCHT.Samples.Menu.SkinSwitcher, QCHT.Interactions.Samples
-        m_MethodName: SetLeftSkin
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 838afe4af28a0554584807ee37e92dda, type: 2}
-          m_ObjectArgumentAssemblyTypeName: QCHT.Interactions.Hands.HandSkin, QCHT.Interactions
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 270509951377600996}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -30334,18 +30388,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664646675}
-        m_TargetAssemblyTypeName: QCHT.Samples.Menu.SkinSwitcher, QCHT.Interactions.Samples
-        m_MethodName: SetLeftSkin
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 0a07d42b444b46d4d9af83fb9a0d06ed, type: 2}
-          m_ObjectArgumentAssemblyTypeName: QCHT.Interactions.Hands.HandSkin, QCHT.Interactions
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 270509951377600996}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -31590,7 +31632,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1227488994}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1741107609}
+        m_TargetAssemblyTypeName: SceneControl, Assembly-CSharp
+        m_MethodName: PauseNPlay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1527403636
 GameObject:
   m_ObjectHideFlags: 0
@@ -33025,18 +33079,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664646675}
-        m_TargetAssemblyTypeName: QCHT.Samples.Menu.SkinSwitcher, QCHT.Interactions.Samples
-        m_MethodName: SetLeftSkin
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 35d76ce1cef623c4e83c90a47e85077b, type: 2}
-          m_ObjectArgumentAssemblyTypeName: QCHT.Interactions.Hands.HandSkin, QCHT.Interactions
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 270509951377600996}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -33553,18 +33595,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664646675}
-        m_TargetAssemblyTypeName: QCHT.Samples.Menu.SkinSwitcher, QCHT.Interactions.Samples
-        m_MethodName: SetRightSkin
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: c4a375fb51b4e6b40b3fc725f4f6fa3e, type: 2}
-          m_ObjectArgumentAssemblyTypeName: QCHT.Interactions.Hands.HandSkin, QCHT.Interactions
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 9019692744713499839}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -34294,6 +34324,154 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733443637}
   m_CullTransparentMesh: 1
+--- !u!1 &1741107608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1741107611}
+  - component: {fileID: 1741107609}
+  - component: {fileID: 1741107610}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1741107609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741107608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf396370b68252a438aa9d6983c8eeb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundMusicSource: {fileID: 1741107610}
+  backgroundMusic: {fileID: 8300000, guid: f8bee65dfd7f18842ae6ffb458eb2663, type: 3}
+  R_musicOnOff_text: {fileID: 165597910}
+  L_musicOnOff_text: {fileID: 717774765}
+  R_sfxOnOff_text: {fileID: 1516799397}
+  L_sfxOnOff_text: {fileID: 484513752}
+  sfx_On: 1
+--- !u!82 &1741107610
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741107608}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f8bee65dfd7f18842ae6ffb458eb2663, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1741107611
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741107608}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.017593741, z: 0.4787686}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1741784062
 GameObject:
   m_ObjectHideFlags: 0
@@ -35249,6 +35427,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830267895}
   m_CullTransparentMesh: 1
+--- !u!1 &1840653267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1840653268}
+  m_Layer: 0
+  m_Name: NoAuras
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1840653268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840653267}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 114730177}
+  - {fileID: 718368058}
+  m_Father: {fileID: 326923244}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1851048875
 GameObject:
   m_ObjectHideFlags: 0
@@ -36749,18 +36960,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664646675}
-        m_TargetAssemblyTypeName: QCHT.Samples.Menu.SkinSwitcher, QCHT.Interactions.Samples
-        m_MethodName: SetRightSkin
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: c4a375fb51b4e6b40b3fc725f4f6fa3e, type: 2}
-          m_ObjectArgumentAssemblyTypeName: QCHT.Interactions.Hands.HandSkin, QCHT.Interactions
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 270509951377600996}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -41285,18 +41484,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664646675}
-        m_TargetAssemblyTypeName: QCHT.Samples.Menu.SkinSwitcher, QCHT.Interactions.Samples
-        m_MethodName: SetLeftSkin
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: dc82ac5921fb3394998fde2c2d3590c0, type: 2}
-          m_ObjectArgumentAssemblyTypeName: QCHT.Interactions.Hands.HandSkin, QCHT.Interactions
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 270509951377600996}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -42128,18 +42315,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664646675}
-        m_TargetAssemblyTypeName: QCHT.Samples.Menu.SkinSwitcher, QCHT.Interactions.Samples
-        m_MethodName: SetLeftSkin
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 0a07d42b444b46d4d9af83fb9a0d06ed, type: 2}
-          m_ObjectArgumentAssemblyTypeName: QCHT.Interactions.Hands.HandSkin, QCHT.Interactions
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 9019692744713499839}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -43980,7 +44155,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 830881161}
     m_Modifications:
     - target: {fileID: 7920131059944238716, guid: 356d0ae7fc6154e17a7333aedb7bb0e4, type: 3}
       propertyPath: m_Name
@@ -43992,19 +44167,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7920131059944238717, guid: 356d0ae7fc6154e17a7333aedb7bb0e4, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7920131059944238717, guid: 356d0ae7fc6154e17a7333aedb7bb0e4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.0045057535
       objectReference: {fileID: 0}
     - target: {fileID: 7920131059944238717, guid: 356d0ae7fc6154e17a7333aedb7bb0e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.197
+      value: -0.06766108
       objectReference: {fileID: 0}
     - target: {fileID: 7920131059944238717, guid: 356d0ae7fc6154e17a7333aedb7bb0e4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.435
+      value: -0.56500006
       objectReference: {fileID: 0}
     - target: {fileID: 7920131059944238717, guid: 356d0ae7fc6154e17a7333aedb7bb0e4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -44012,15 +44187,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7920131059944238717, guid: 356d0ae7fc6154e17a7333aedb7bb0e4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7920131059944238717, guid: 356d0ae7fc6154e17a7333aedb7bb0e4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7920131059944238717, guid: 356d0ae7fc6154e17a7333aedb7bb0e4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7920131059944238717, guid: 356d0ae7fc6154e17a7333aedb7bb0e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -44298,8 +44473,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7175937628792984626}
-  - component: {fileID: 2718819118292290179}
   - component: {fileID: 5492897873199006983}
+  - component: {fileID: 7175937628792984627}
   m_Layer: 0
   m_Name: Left_handMenu
   m_TagString: Untagged
@@ -44544,22 +44719,6 @@ MonoBehaviour:
   bendEnabled: 1
   bendYRatio: 0
   bendSpeed: 10
---- !u!114 &2718819118292290179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2560225661404273125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d71a8e455c7241f886c0f1f295aa906, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _keyboardInputsText: {fileID: 0}
-  OnKeyButtonPressed:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!222 &2804708733038240876
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -47795,7 +47954,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4831428054758672653}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1741107609}
+        m_TargetAssemblyTypeName: SceneControl, Assembly-CSharp
+        m_MethodName: CloseApp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &5407085822420055216
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48845,6 +49016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2124402552695001449}
   - component: {fileID: 3663634445254492252}
+  - component: {fileID: 6731428103078698175}
   m_Layer: 0
   m_Name: Right_handMenu
   m_TagString: Untagged
@@ -48852,6 +49024,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &6731428103078698175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6731428103078698174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e4db7dceb9bba429fee6c10c19bdfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainButtons: {fileID: 9019692744713499839}
+  spellButtons: {fileID: 803617651}
+  optionButtons: {fileID: 524422430}
 --- !u!1 &6841920748335195398
 GameObject:
   m_ObjectHideFlags: 0
@@ -49303,6 +49490,21 @@ Transform:
   m_Father: {fileID: 574271954}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 97.5, y: 0, z: 0}
+--- !u!114 &7175937628792984627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2560225661404273125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e4db7dceb9bba429fee6c10c19bdfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainButtons: {fileID: 270509951377600996}
+  spellButtons: {fileID: 249131000}
+  optionButtons: {fileID: 2127614132}
 --- !u!114 &7257551059094301587
 MonoBehaviour:
   m_ObjectHideFlags: 0
