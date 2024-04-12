@@ -24,6 +24,9 @@ public class SpellCastingAura : MonoBehaviour
     public LaunchSpell leftHandSpellLauncher; // Assign in the Inspector
     public LaunchSpell rightHandSpellLauncher; // Assign in the Inspector
 
+    public AudioSource leftHandAudio;
+    public AudioSource rightHandAudio;
+
     private Stopwatch leftHandSpellChargeTimer = new Stopwatch();
     private Stopwatch rightHandSpellChargeTimer = new Stopwatch();
 
@@ -60,10 +63,12 @@ public class SpellCastingAura : MonoBehaviour
         if (isLeftHand)
         {
             leftHandSpellChargeTimer.Restart();
+            leftHandAudio.Play();
         }
         else
         {
             rightHandSpellChargeTimer.Restart();
+            rightHandAudio.Play();
         }
     }
 
@@ -77,6 +82,7 @@ public class SpellCastingAura : MonoBehaviour
             leftHandSpellLevel = CalculateSpellLevel(leftHandSpellChargeTimer.Elapsed.TotalSeconds);
             leftHandSpellLauncher.PrepareSpell(true); // Prepare the spell based on the left hand's spell level
             leftHandSpellLauncher.Launch(); // Launch the spell
+            leftHandAudio.Stop();
             DeactivateAllLeftAuras();
         }
         else
@@ -84,6 +90,7 @@ public class SpellCastingAura : MonoBehaviour
             rightHandSpellLevel = CalculateSpellLevel(rightHandSpellChargeTimer.Elapsed.TotalSeconds);
             rightHandSpellLauncher.PrepareSpell(false); // Prepare the spell based on the right hand's spell level
             rightHandSpellLauncher.Launch(); // Launch the spell
+            rightHandAudio.Stop();
             DeactivateAllRightAuras();
         }
     }

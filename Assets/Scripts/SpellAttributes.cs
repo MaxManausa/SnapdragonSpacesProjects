@@ -9,10 +9,14 @@ public class SpellAttributes : MonoBehaviour
 
     [SerializeField] private AudioSource spellAudio;
     [SerializeField] private AudioClip spell_StartSound;
+    
     //[SerializeField] private AudioClip spell_EndSound;
+    // THE END SOUND IS ON THE END PARTICLES
 
     //[SerializeField] private ParticleSystem startingParticles;
+
     //[SerializeField] private ParticleSystem endParticles;
+    // THE END PARTICLES ARE ON THE SPELLCOLLISIONHANDLER SCRIPT
 
     // Start is called before the first frame update
     void Start()

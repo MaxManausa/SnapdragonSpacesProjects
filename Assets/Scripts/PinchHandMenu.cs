@@ -73,7 +73,7 @@ public class PinchHandMenu : MonoBehaviour
 
     private void Update()
     {
-        if (pinchTimer.IsRunning && pinchTimer.Elapsed.TotalSeconds >= 1)
+        if (pinchTimer.IsRunning && pinchTimer.Elapsed.TotalSeconds >= 2)
         {
             pinchTimer.Stop(); // Stop the timer to prevent multiple activations
 

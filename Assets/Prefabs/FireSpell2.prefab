@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 1069455277706379508}
   - component: {fileID: 2483034662916929412}
   - component: {fileID: 1657742213584120811}
-  m_Layer: 0
+  - component: {fileID: 5368621027632762664}
+  m_Layer: 3
   m_Name: FireSpell2
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,3 +227,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellAudio: {fileID: 2483034662916929412}
   spell_StartSound: {fileID: 8300000, guid: 46767d0db722e1d499c6ffedc99041d8, type: 3}
+--- !u!114 &5368621027632762664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4641979177927384613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae3301c754b0916418c20230c589aebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endParticleSystem: {fileID: 1941269926939011546, guid: a51baeeb6bcd43e45947a5b61c134376, type: 3}
+  projectile: {fileID: 4641979177927384613}

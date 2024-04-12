@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 1069455277706379508}
   - component: {fileID: 7415631230588292763}
   - component: {fileID: 1597515269338555408}
-  m_Layer: 0
+  - component: {fileID: 9110632769046097483}
+  m_Layer: 3
   m_Name: LightningSpell2
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,3 +227,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellAudio: {fileID: 7415631230588292763}
   spell_StartSound: {fileID: 8300000, guid: 46767d0db722e1d499c6ffedc99041d8, type: 3}
+--- !u!114 &9110632769046097483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4641979177927384613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae3301c754b0916418c20230c589aebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endParticleSystem: {fileID: 3352840666495945276, guid: 8c576a7442fbf74429f0cd742e983522, type: 3}
+  projectile: {fileID: 4641979177927384613}
