@@ -81,13 +81,15 @@ public class PinchHandMenu : MonoBehaviour
             {
                 // Deactivate the right hand menu and activate the left
                 rightHandMenu.SetActive(false);
-                MoveMenuToHand(leftHandMenu, leftHandMenuLocation);
+                leftHandMenu.SetActive(true);
+                //MoveMenuToHand(leftHandMenu, leftHandMenuLocation);
             }
             else if (isRightHandPinching)
             {
                 // Deactivate the left hand menu and activate the right
                 leftHandMenu.SetActive(false);
-                MoveMenuToHand(rightHandMenu, rightHandMenuLocation);
+                rightHandMenu.SetActive(true);
+                //MoveMenuToHand(rightHandMenu, rightHandMenuLocation);
             }
         }
     }

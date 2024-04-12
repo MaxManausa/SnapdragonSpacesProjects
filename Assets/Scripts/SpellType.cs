@@ -56,28 +56,34 @@ public class SpellType : MonoBehaviour
     [SerializeField] GameObject l_IceAura2;
     [SerializeField] GameObject l_IceAura3;
 
-    /*
+    
     [Header("Lightning Magic")]
     [SerializeField] GameObject lightningSpell1;
     [SerializeField] GameObject lightningSpell2;
     [SerializeField] GameObject lightningSpell3;
-    [SerializeField] GameObject lightningAura1;
-    [SerializeField] GameObject lightningAura2;
-    [SerializeField] GameObject lightningAura3;
+    [SerializeField] GameObject r_LightningAura1;
+    [SerializeField] GameObject r_LightningAura2;
+    [SerializeField] GameObject r_LightningAura3;
+    [SerializeField] GameObject l_LightningAura1;
+    [SerializeField] GameObject l_LightningAura2;
+    [SerializeField] GameObject l_LightningAura3;
 
     [Header("Gravity Magic")]
     [SerializeField] GameObject gravitySpell1;
     [SerializeField] GameObject gravitySpell2;
     [SerializeField] GameObject gravitySpell3;
-    [SerializeField] GameObject gravityAura1;
-    [SerializeField] GameObject gravityAura2;
-    [SerializeField] GameObject gravityAura3;
-    */
+    [SerializeField] GameObject r_GravityAura1;
+    [SerializeField] GameObject r_GravityAura2;
+    [SerializeField] GameObject r_GravityAura3;
+    [SerializeField] GameObject l_GravityAura1;
+    [SerializeField] GameObject l_GravityAura2;
+    [SerializeField] GameObject l_GravityAura3;
+
 
 
     public void R_Fire()
     {
-        //this method makes the left hand spell casting magic as fire
+        //this method makes the right hand spell casting magic as fire
         spellCastingAura.R_SmAura = r_FireAura1;
         spellCastingAura.R_MeAura = r_FireAura2;
         spellCastingAura.R_LaAura = r_FireAura3;
@@ -118,5 +124,50 @@ public class SpellType : MonoBehaviour
         l_SpellLauncher.Spell1 = iceSpell1;
         l_SpellLauncher.Spell2 = iceSpell2;
         l_SpellLauncher.Spell3 = iceSpell3;
+    }
+
+    public void R_Lightning()
+    {
+        spellCastingAura.R_SmAura = r_LightningAura1;
+        spellCastingAura.R_MeAura = r_LightningAura2;
+        spellCastingAura.R_LaAura = r_LightningAura3;
+
+        r_SpellLauncher.Spell1 = lightningSpell1;
+        r_SpellLauncher.Spell2 = lightningSpell2;
+        r_SpellLauncher.Spell3 = lightningSpell3;
+    }
+
+    public void L_Lightning()
+    {
+        spellCastingAura.L_SmAura = l_LightningAura1;
+        spellCastingAura.L_MeAura = l_LightningAura2;
+        spellCastingAura.L_LaAura = l_LightningAura3;
+
+        l_SpellLauncher.Spell1 = lightningSpell1;
+        l_SpellLauncher.Spell2 = lightningSpell2;
+        l_SpellLauncher.Spell3 = lightningSpell3;
+    }
+
+
+    public void R_Gravity()
+    {
+        spellCastingAura.R_SmAura = r_GravityAura1;
+        spellCastingAura.R_MeAura = r_GravityAura2;
+        spellCastingAura.R_LaAura = r_GravityAura3;
+        
+        r_SpellLauncher.Spell1 = gravitySpell1;
+        r_SpellLauncher.Spell2 = gravitySpell2;
+        r_SpellLauncher.Spell3 = gravitySpell3;
+    }
+
+    public void L_Gravity()
+    {
+        spellCastingAura.L_SmAura = l_GravityAura1;
+        spellCastingAura.L_MeAura = l_GravityAura2;
+        spellCastingAura.L_LaAura = l_GravityAura3;
+
+        l_SpellLauncher.Spell1 = gravitySpell1;
+        l_SpellLauncher.Spell2 = gravitySpell2;
+        l_SpellLauncher.Spell3 = gravitySpell3;
     }
 }
