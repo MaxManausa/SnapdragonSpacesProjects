@@ -4,9 +4,9 @@ public class LaunchSpell : MonoBehaviour
 {
     [SerializeField] private SpellCastingAura spellCasting;
 
-    [SerializeField] private GameObject fireSpell1;
-    [SerializeField] private GameObject fireSpell2;
-    [SerializeField] private GameObject fireSpell3;
+    public GameObject Spell1;
+    public GameObject Spell2;
+    public GameObject Spell3;
 
     // Placeholder for additional spells
     /*
@@ -59,13 +59,13 @@ public class LaunchSpell : MonoBehaviour
         switch (spellLevel)
         {
             case 1:
-                prefabToLaunch = fireSpell1;
+                prefabToLaunch = Spell1;
                 break;
             case 2:
-                prefabToLaunch = fireSpell2;
+                prefabToLaunch = Spell2;
                 break;
             case 3:
-                prefabToLaunch = fireSpell3;
+                prefabToLaunch = Spell3;
                 break;
             default:
                 Debug.LogError("Invalid spell level: " + spellLevel);
