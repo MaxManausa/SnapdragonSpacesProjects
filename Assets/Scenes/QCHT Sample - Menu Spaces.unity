@@ -8833,8 +8833,7 @@ MonoBehaviour:
   rightHandPinchAction: {fileID: 1726394442255136386, guid: 5c79e70dd0ed74bc59b489ccfc5fbfe3, type: 3}
   leftHandMenuLocation: {fileID: 4259609466219778410}
   rightHandMenuLocation: {fileID: 3126542654587540685}
-  leftHandMenu: {fileID: 2560225661404273125}
-  rightHandMenu: {fileID: 6731428103078698174}
+  handMenu: {fileID: 6731428103078698174}
 --- !u!114 &439862267
 MonoBehaviour:
   m_ObjectHideFlags: 0

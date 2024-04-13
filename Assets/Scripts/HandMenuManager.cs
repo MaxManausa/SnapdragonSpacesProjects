@@ -9,7 +9,7 @@ public class HandMenuManager : MonoBehaviour
     [SerializeField] GameObject optionButtons;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         mainButtons.SetActive(true);
         spellButtons.SetActive(false);

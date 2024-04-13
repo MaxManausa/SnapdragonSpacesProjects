@@ -1,6 +1,6 @@
+using System.Diagnostics; // For Stopwatch
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System.Diagnostics; // For Stopwatch
 
 public class PinchHandMenu : MonoBehaviour
 {
@@ -12,8 +12,7 @@ public class PinchHandMenu : MonoBehaviour
     public Transform rightHandMenuLocation;
 
     [Header("Hand Menus")]
-    public GameObject leftHandMenu;
-    public GameObject rightHandMenu;
+    public GameObject handMenu;
 
     private Stopwatch pinchTimer = new Stopwatch();
     private bool isLeftHandPinching = false;
@@ -79,21 +78,20 @@ public class PinchHandMenu : MonoBehaviour
 
             if (isLeftHandPinching)
             {
-                // Deactivate the right hand menu and activate the left
-                rightHandMenu.SetActive(false);
-                leftHandMenu.SetActive(true);
+                // activate hand menu
+                handMenu.SetActive(true);
                 //MoveMenuToHand(leftHandMenu, leftHandMenuLocation);
             }
             else if (isRightHandPinching)
             {
-                // Deactivate the left hand menu and activate the right
-                leftHandMenu.SetActive(false);
-                rightHandMenu.SetActive(true);
+                // activate hand menu
+                handMenu.SetActive(true);
                 //MoveMenuToHand(rightHandMenu, rightHandMenuLocation);
             }
         }
     }
 
+    // no longer in use because hand menu is set up to camera and follows head tracking
     private void MoveMenuToHand(GameObject handMenu, Transform handLocation)
     {
         handMenu.transform.position = handLocation.position;
