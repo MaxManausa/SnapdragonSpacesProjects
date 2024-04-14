@@ -4218,7 +4218,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: PromixalPokeCube (1) Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2969468515373961519, guid: 84489c0a630d46f4c8c1b019c8f870eb, type: 3}
+    - {fileID: 2969468515373961515, guid: 84489c0a630d46f4c8c1b019c8f870eb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 84489c0a630d46f4c8c1b019c8f870eb, type: 3}
 --- !u!4 &222569365 stripped
 Transform:
@@ -19804,7 +19806,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: PromixalPokeCube (1) Variant (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2969468515373961519, guid: 84489c0a630d46f4c8c1b019c8f870eb, type: 3}
+    - {fileID: 2969468515373961515, guid: 84489c0a630d46f4c8c1b019c8f870eb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 84489c0a630d46f4c8c1b019c8f870eb, type: 3}
 --- !u!4 &952986342 stripped
 Transform:
@@ -23595,7 +23599,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2026392994387792466, guid: 86d935697d33f7043b0cd4c7fe8fde21, type: 3}
+    - {fileID: 2026392994387792460, guid: 86d935697d33f7043b0cd4c7fe8fde21, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 86d935697d33f7043b0cd4c7fe8fde21, type: 3}
 --- !u!4 &1178975097 stripped
 Transform:
@@ -30706,7 +30712,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2026392994387792466, guid: 86d935697d33f7043b0cd4c7fe8fde21, type: 3}
+    - {fileID: 2026392994387792460, guid: 86d935697d33f7043b0cd4c7fe8fde21, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 86d935697d33f7043b0cd4c7fe8fde21, type: 3}
 --- !u!4 &1456268802 stripped
 Transform:
@@ -33837,7 +33845,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2026392994387792466, guid: 86d935697d33f7043b0cd4c7fe8fde21, type: 3}
+    - {fileID: 2026392994387792460, guid: 86d935697d33f7043b0cd4c7fe8fde21, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 86d935697d33f7043b0cd4c7fe8fde21, type: 3}
 --- !u!4 &1632212155 stripped
 Transform:
@@ -42236,7 +42246,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: PromixalPokeCube (1) Variant (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2969468515373961519, guid: 84489c0a630d46f4c8c1b019c8f870eb, type: 3}
+    - {fileID: 2969468515373961515, guid: 84489c0a630d46f4c8c1b019c8f870eb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 84489c0a630d46f4c8c1b019c8f870eb, type: 3}
 --- !u!4 &2094607788 stripped
 Transform:
