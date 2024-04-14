@@ -80,16 +80,16 @@ public class SpellCastingAura : MonoBehaviour
         if (isLeftHand)
         {
             leftHandSpellLevel = CalculateSpellLevel(leftHandSpellChargeTimer.Elapsed.TotalSeconds);
-            leftHandSpellLauncher.PrepareSpell(true); // Prepare the spell based on the left hand's spell level
-            leftHandSpellLauncher.Launch(); // Launch the spell
+            leftHandSpellLauncher.PrepareSpell(true);
+            leftHandSpellLauncher.Launch();
             leftHandAudio.Stop();
             DeactivateAllLeftAuras();
         }
         else
         {
             rightHandSpellLevel = CalculateSpellLevel(rightHandSpellChargeTimer.Elapsed.TotalSeconds);
-            rightHandSpellLauncher.PrepareSpell(false); // Prepare the spell based on the right hand's spell level
-            rightHandSpellLauncher.Launch(); // Launch the spell
+            rightHandSpellLauncher.PrepareSpell(false);
+            rightHandSpellLauncher.Launch();
             rightHandAudio.Stop();
             DeactivateAllRightAuras();
         }
@@ -113,20 +113,50 @@ public class SpellCastingAura : MonoBehaviour
         GameObject meAura = isLeftHand ? L_MeAura : R_MeAura;
         GameObject laAura = isLeftHand ? L_LaAura : R_LaAura;
 
-        // Deactivate all auras first
-        smAura.SetActive(false);
-        meAura.SetActive(false);
-        laAura.SetActive(false);
+        // Deactivate all auras first and unparent them
+        DeactivateAndUnparentAura(L_SmAura);
+        DeactivateAndUnparentAura(L_MeAura);
+        DeactivateAndUnparentAura(L_LaAura);
+        DeactivateAndUnparentAura(R_SmAura);
+        DeactivateAndUnparentAura(R_MeAura);
+        DeactivateAndUnparentAura(R_LaAura);
 
-        // Activate the appropriate aura
-        if (spellLevel == 1) smAura.SetActive(true);
-        else if (spellLevel == 2) meAura.SetActive(true);
-        else if (spellLevel >= 3) laAura.SetActive(true);
+        // Activate the appropriate aura and make it a child of the hand
+        GameObject activeAura = null;
+        if (spellLevel == 1) activeAura = smAura;
+        else if (spellLevel == 2) activeAura = meAura;
+        else if (spellLevel >= 3) activeAura = laAura;
 
-        // Update the position and rotation of the active aura
-        UpdateAuraPositionAndRotation(smAura, handTransform);
-        UpdateAuraPositionAndRotation(meAura, handTransform);
-        UpdateAuraPositionAndRotation(laAura, handTransform);
+        if (activeAura != null)
+        {
+            activeAura.SetActive(true);
+            activeAura.transform.SetParent(handTransform, false);
+            activeAura.transform.localPosition = new Vector3(0, 0, 0.05f); // Adjust local position as needed
+            activeAura.transform.localRotation = Quaternion.identity; // Adjust local rotation as needed
+        }
+    }
+
+    private void DeactivateAllLeftAuras()
+    {
+        DeactivateAndUnparentAura(L_SmAura);
+        DeactivateAndUnparentAura(L_MeAura);
+        DeactivateAndUnparentAura(L_LaAura);
+    }
+
+    private void DeactivateAllRightAuras()
+    {
+        DeactivateAndUnparentAura(R_SmAura);
+        DeactivateAndUnparentAura(R_MeAura);
+        DeactivateAndUnparentAura(R_LaAura);
+    }
+
+    private void DeactivateAndUnparentAura(GameObject aura)
+    {
+        if (aura.activeSelf)
+        {
+            aura.SetActive(false);
+            aura.transform.SetParent(null);
+        }
     }
 
     private int CalculateSpellLevel(double elapsedTime)
@@ -134,28 +164,5 @@ public class SpellCastingAura : MonoBehaviour
         if (elapsedTime < 2) return 1;
         else if (elapsedTime < 5) return 2;
         else return 3;
-    }
-
-    private void UpdateAuraPositionAndRotation(GameObject aura, Transform handTransform)
-    {
-        if (aura.activeSelf)
-        {
-            aura.transform.position = handTransform.position + handTransform.forward * 0.05f;
-            aura.transform.rotation = handTransform.rotation;
-        }
-    }
-
-    private void DeactivateAllLeftAuras()
-    {
-        L_SmAura.SetActive(false);
-        L_MeAura.SetActive(false);
-        L_LaAura.SetActive(false);
-    }
-
-    private void DeactivateAllRightAuras()
-    {
-        R_SmAura.SetActive(false);
-        R_MeAura.SetActive(false);
-        R_LaAura.SetActive(false);
     }
 }
