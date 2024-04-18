@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +10,7 @@ public class StoryManager : MonoBehaviour
 {
     [Header("Other scripts")]
     [SerializeField] private DelayedActivator delayedActivator;
-    [SerializeField] private MenuEnabler menuEnabler;
+    //[SerializeField] private MenuEnabler menuEnabler;
 
     [Header("Pop-Up UI Screens")]
     [SerializeField] private GameObject welcomeNoticeScreen;
@@ -138,7 +136,7 @@ public class StoryManager : MonoBehaviour
         gameSequencePosition += 1;
 
         //disable ingame menu to avoid errors, this is quickly changed for quests and challenges tho
-        menuEnabler.NoMenusAllowed();
+        //menuEnabler.NoMenusAllowed();
 
         // Clear all screens at the beginning to ensure a clean state
         DeactivateAllScreens();
@@ -174,7 +172,7 @@ public class StoryManager : MonoBehaviour
                 break;
             case 7:
                 delayedActivator.ActivateGameObject(quest1);
-                menuEnabler.MenusAreAllowed();
+               // menuEnabler.MenusAreAllowed();
                 break;
             case 8:
                 SetQuestPassedText("You beat Quest 1! Data: Time till completion,\n targets hit 5/5, spells cast, accuracy,\n grade, based on time and accuracy.");
@@ -190,7 +188,7 @@ public class StoryManager : MonoBehaviour
                 break;
             case 11:
                 delayedActivator.ActivateGameObject(quest2);
-                menuEnabler.MenusAreAllowed();
+              //  menuEnabler.MenusAreAllowed();
                 break;
             case 12:
                 SetQuestPassedText("You beat Quest 2! Data: Time till \ncompletion, targets hit 5/5, spells cast, \naccuracy, grade, based on time and accuracy.");
@@ -206,7 +204,7 @@ public class StoryManager : MonoBehaviour
                 break;
             case 15:
                 delayedActivator.ActivateGameObject(challenge1);
-                menuEnabler.MenusAreAllowed();
+              //  menuEnabler.MenusAreAllowed();
                 break;
             case 16:
                 SetChallengePassedText("You passed the fire magic challenge! Data: \nTime till completion, targets hit 5/5, spells cast, accuracy, grade, based on time and accuracy.");
@@ -233,7 +231,7 @@ public class StoryManager : MonoBehaviour
                 break;
             case 21:
                 delayedActivator.ActivateGameObject(quest3);
-                menuEnabler.MenusAreAllowed();
+              //  menuEnabler.MenusAreAllowed();
                 break;
             case 22:
                 SetQuestPassedText("You beat Quest 3! Data: Time till \ncompletion, targets hit 5/5, spells cast, \naccuracy, grade, based on time and accuracy.");
@@ -245,7 +243,7 @@ public class StoryManager : MonoBehaviour
                 break;
             case 24:
                 delayedActivator.ActivateGameObject(quest4);
-                menuEnabler.MenusAreAllowed();
+             //   menuEnabler.MenusAreAllowed();
                 break;
             case 25:
                 SetQuestPassedText("You beat Quest 4! Data: Time till \ncompletion, targets hit 5/5, spells cast,\n accuracy, grade, based on time and accuracy.");
@@ -261,7 +259,7 @@ public class StoryManager : MonoBehaviour
                 break;
             case 28:
                 delayedActivator.ActivateGameObject(challenge2);
-                menuEnabler.MenusAreAllowed();
+              //  menuEnabler.MenusAreAllowed();
                 break;
             case 29:
                 SetChallengePassedText("You passed the ice magic challenge! \nData: Time till completion, targets hit 5/5, spells cast,\n accuracy, grade, based on time and accuracy.");
@@ -277,7 +275,7 @@ public class StoryManager : MonoBehaviour
                 break;
             case 32:
                 delayedActivator.ActivateGameObject(challenge3);
-                menuEnabler.MenusAreAllowed();
+             //   menuEnabler.MenusAreAllowed();
                 break;
             case 33:
                 SetChallengePassedText("You passed the Fire & Ice challenge! Data:\n Time till completion, targets hit 5/5, spells cast, accuracy, grade, \nbased on time and accuracy.");
@@ -304,7 +302,7 @@ public class StoryManager : MonoBehaviour
                 break;
             case 38:
                 delayedActivator.ActivateGameObject(quest5);
-                menuEnabler.MenusAreAllowed();
+            //    menuEnabler.MenusAreAllowed();
                 break;
             case 39:
                 SetQuestPassedText("You beat the Lightning Quest! Time till completion,\n targets hit 5/5.");
@@ -316,7 +314,7 @@ public class StoryManager : MonoBehaviour
                 break;
             case 41:
                 delayedActivator.ActivateGameObject(quest6);
-                menuEnabler.MenusAreAllowed();
+             //   menuEnabler.MenusAreAllowed();
                 break;
             case 42:
                 SetQuestPassedText("You beat the Lightning Quest 2! Time\n till completion, targets hit 5/5.");
@@ -328,7 +326,7 @@ public class StoryManager : MonoBehaviour
                 break;
             case 44:
                 delayedActivator.ActivateGameObject(challenge4);
-                menuEnabler.MenusAreAllowed();
+             //   menuEnabler.MenusAreAllowed();
                 break;
             case 45:
                 SetChallengePassedText("You passed the Lightning level 3\n challenge! Data: Time till completion, targets hit 5/5.");
@@ -344,7 +342,7 @@ public class StoryManager : MonoBehaviour
                 break;
             case 48:
                 delayedActivator.ActivateGameObject(challenge5);
-                menuEnabler.MenusAreAllowed();
+             //   menuEnabler.MenusAreAllowed();
                 break;
             case 49:
                 SetChallengePassedText("You passed the combined elements \nchallenge!");
@@ -371,7 +369,7 @@ public class StoryManager : MonoBehaviour
                 break;
             case 54:
                 delayedActivator.ActivateGameObject(quest7);
-                menuEnabler.MenusAreAllowed();
+              //  menuEnabler.MenusAreAllowed();
                 break;
             case 55:
                 SetQuestPassedText("You passed the Defensive level 1 quest!");
@@ -383,7 +381,7 @@ public class StoryManager : MonoBehaviour
                 break;
             case 57:
                 delayedActivator.ActivateGameObject(quest8);
-                menuEnabler.MenusAreAllowed();
+              //  menuEnabler.MenusAreAllowed();
                 break;
             case 58:
                 SetQuestPassedText("You passed the Defensive level 2 \nquest!");
@@ -395,7 +393,7 @@ public class StoryManager : MonoBehaviour
                 break;
             case 60:
                 delayedActivator.ActivateGameObject(challenge6);
-                menuEnabler.MenusAreAllowed();
+              //  menuEnabler.MenusAreAllowed();
                 break;
             case 61:
                 SetChallengePassedText("You passed the Offensive and \nDefensive challenge!");
@@ -432,12 +430,12 @@ public class StoryManager : MonoBehaviour
                 break;
             case 66:
                 delayedActivator.ActivateGameObject(trainingRoom);
-                menuEnabler.MenusAreAllowed();
+             //   menuEnabler.MenusAreAllowed();
                 break;
             case 67:
                 SetQuestPassedText("Training complete! Ready for new challenges.");
                 delayedActivator.ActivateGameObject(questPassedScreen);
-                menuEnabler.MenusAreAllowed();
+             //   menuEnabler.MenusAreAllowed();
                 break;
             case 68:
                 SetChallengeRequestText("Miscellaneous Challenge 1.");
@@ -445,7 +443,7 @@ public class StoryManager : MonoBehaviour
                 break;
             case 69:
                 delayedActivator.ActivateGameObject(challenge7);
-                menuEnabler.MenusAreAllowed();
+               // menuEnabler.MenusAreAllowed();
                 break;
             case 70:
                 SetChallengePassedText("You passed the Miscellaneous Challenge 1!");
@@ -457,7 +455,7 @@ public class StoryManager : MonoBehaviour
                 break;
             case 72:
                 delayedActivator.ActivateGameObject(challenge8);
-                menuEnabler.MenusAreAllowed();
+              //  menuEnabler.MenusAreAllowed();
                 break;
             case 73:
                 SetChallengePassedText("You passed the Miscellaneous Challenge 2!");
@@ -469,7 +467,7 @@ public class StoryManager : MonoBehaviour
                 break;
             case 75:
                 delayedActivator.ActivateGameObject(challenge9);
-                menuEnabler.MenusAreAllowed();
+             //   menuEnabler.MenusAreAllowed();
                 break;
             case 76:
                 SetChallengePassedText("You passed the Miscellaneous Challenge 3!");
@@ -481,7 +479,7 @@ public class StoryManager : MonoBehaviour
                 break;
             case 78:
                 delayedActivator.ActivateGameObject(challenge10);
-                menuEnabler.MenusAreAllowed();
+             //   menuEnabler.MenusAreAllowed();
                 break;
             case 79:
                 SetChallengePassedText("You passed the Miscellaneous Challenge 4!");
