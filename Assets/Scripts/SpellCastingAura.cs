@@ -113,13 +113,10 @@ public class SpellCastingAura : MonoBehaviour
         GameObject meAura = isLeftHand ? L_MeAura : R_MeAura;
         GameObject laAura = isLeftHand ? L_LaAura : R_LaAura;
 
-        // Deactivate all auras first and unparent them
-        DeactivateAndUnparentAura(L_SmAura);
-        DeactivateAndUnparentAura(L_MeAura);
-        DeactivateAndUnparentAura(L_LaAura);
-        DeactivateAndUnparentAura(R_SmAura);
-        DeactivateAndUnparentAura(R_MeAura);
-        DeactivateAndUnparentAura(R_LaAura);
+        // Only deactivate and unparent the auras for the current hand
+        DeactivateAndUnparentAura(smAura);
+        DeactivateAndUnparentAura(meAura);
+        DeactivateAndUnparentAura(laAura);
 
         // Activate the appropriate aura and make it a child of the hand
         GameObject activeAura = null;
