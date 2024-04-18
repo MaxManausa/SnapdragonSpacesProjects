@@ -17,10 +17,10 @@ public class SceneControl : MonoBehaviour
 {
     [SerializeField] AudioSource backgroundMusicSource;
     [SerializeField] AudioClip backgroundMusic;
-    [SerializeField] Text R_musicOnOff_text;
-    [SerializeField] Text L_musicOnOff_text;
-    [SerializeField] Text R_sfxOnOff_text;
-    [SerializeField] Text L_sfxOnOff_text;
+    [SerializeField] Text storyMode_musicOnOff_text;
+    [SerializeField] Text mainMenu_musicOnOff_text;
+    [SerializeField] Text storyMode_sfxOnOff_text;
+    [SerializeField] Text mainMenu_sfxOnOff_text;
 
     public bool sfx_On = true;
 
@@ -30,12 +30,12 @@ public class SceneControl : MonoBehaviour
     {
         backgroundMusicSource.clip = backgroundMusic;
         backgroundMusicSource.Play();
-        R_musicOnOff_text.text = "Music: " + "\nOn";
-        L_musicOnOff_text.text = "Music: " + "\nOn";
+        storyMode_musicOnOff_text.text = "Music: " + "\nOn";
+        mainMenu_musicOnOff_text.text = "Music: " + "\nOn";
 
         sfx_On = true;
-        R_sfxOnOff_text.text = "SFX: " + "\nOn";
-        L_sfxOnOff_text.text = "SFX: " + "\nOn";
+        storyMode_sfxOnOff_text.text = "SFX: " + "\nOn";
+        mainMenu_sfxOnOff_text.text = "SFX: " + "\nOn";
     }
 
     public void PauseNPlay()
@@ -43,14 +43,14 @@ public class SceneControl : MonoBehaviour
         if (backgroundMusicSource.isPlaying) 
         { 
             backgroundMusicSource.Pause();
-            R_musicOnOff_text.text = "Music: " + "\nOff";
-            L_musicOnOff_text.text = "Music: " + "\nOff";
+            storyMode_musicOnOff_text.text = "Music: " + "\nOff";
+            mainMenu_musicOnOff_text.text = "Music: " + "\nOff";
         }
         else
         {
             backgroundMusicSource.Play();
-            R_musicOnOff_text.text = "Music: " + "\nOn";
-            L_musicOnOff_text.text = "Music: " + "\nOn";
+            storyMode_musicOnOff_text.text = "Music: " + "\nOn";
+            mainMenu_musicOnOff_text.text = "Music: " + "\nOn";
         }
     }
 
@@ -59,14 +59,14 @@ public class SceneControl : MonoBehaviour
         if (sfx_On == true)
         {
             sfx_On = false;
-            R_sfxOnOff_text.text = "SFX: " + "\nOff";
-            L_sfxOnOff_text.text = "SFX: " + "\nOff";
+            storyMode_sfxOnOff_text.text = "SFX: " + "\nOff";
+            mainMenu_sfxOnOff_text.text = "SFX: " + "\nOff";
         }
         else
         {
             sfx_On = true;
-            R_sfxOnOff_text.text = "SFX: " + "\nOn";
-            L_sfxOnOff_text.text = "SFX: " + "\nOn";
+            storyMode_sfxOnOff_text.text = "SFX: " + "\nOn";
+            mainMenu_sfxOnOff_text.text = "SFX: " + "\nOn";
         }
     }
 
