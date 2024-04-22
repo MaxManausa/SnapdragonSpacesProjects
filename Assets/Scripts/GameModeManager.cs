@@ -1,3 +1,5 @@
+using QCHT.Interactions.Hands;
+using QCHT.Samples.Menu;
 using UnityEngine;
 
 public class GameModeManager : MonoBehaviour
@@ -7,6 +9,9 @@ public class GameModeManager : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject storyMenu;
     [SerializeField] private GameObject freePlayMenu;
+
+    [SerializeField] private GameObject storyModeUIScreens;
+    [SerializeField] private SpellType spellType;
 
     // Enumeration for Game Modes
     public enum GameMode
@@ -60,6 +65,9 @@ public class GameModeManager : MonoBehaviour
         Debug.Log("Entering Main Menu");
         // Add your Main Menu logic here
         pinchHandMenu.handMenu = mainMenu;
+        storyModeUIScreens.SetActive(false);
+        //spellCasting.enabled = false;
+        ResetHands();
     }
 
     // Method to activate Story Mode
@@ -68,6 +76,9 @@ public class GameModeManager : MonoBehaviour
         Debug.Log("Entering Story Mode");
         // Add your Story Mode logic here
         pinchHandMenu.handMenu = storyMenu;
+        storyModeUIScreens.SetActive(true);
+        //spellCasting.enabled = true;
+        ResetHands();
     }
 
     // Method to activate Free Play
@@ -76,5 +87,14 @@ public class GameModeManager : MonoBehaviour
         Debug.Log("Entering Free Play");
         // Add your Free Play logic here
         pinchHandMenu.handMenu = freePlayMenu;
+        storyModeUIScreens.SetActive(false);
+        //spellCasting.enabled = true;
+        ResetHands();
+    }
+
+    public void ResetHands()
+    {
+        spellType.R_NoMagic();
+        spellType.L_NoMagic();
     }
 }

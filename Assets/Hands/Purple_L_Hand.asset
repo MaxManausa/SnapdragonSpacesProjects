@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Purple_L_Hand
   m_EditorClassIdentifier: 
   MainMesh: {fileID: 3342554514662406140, guid: 2c9340c6c24484cde8a139d528cc77f5, type: 3}
-  MainMaterial: {fileID: 2100000, guid: 0978ddbdf30b9f0438e4d6d0bca99d04, type: 2}
+  MainMaterial: {fileID: 2100000, guid: 2279f6e9425bb4142a1b302f2b9948eb, type: 2}
   GhostMesh: {fileID: 3342554514662406140, guid: 2c9340c6c24484cde8a139d528cc77f5, type: 3}
   GhostMaterial: {fileID: 2100000, guid: 6c05f4a63d172470b80d36964d91f630, type: 2}
   hasFeedbacks: 0

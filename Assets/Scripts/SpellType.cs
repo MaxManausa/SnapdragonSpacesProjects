@@ -104,6 +104,10 @@ public class SpellType : MonoBehaviour
     public int r_spellnumber;
     public int l_spellnumber;
 
+    public HandSkin currentRightHandMagic;
+    public HandSkin currentLeftHandMagic;
+
+
     private void Start()
     {
         handSkinSwitcher.SetLeftSkin(l_noMagicHand);
@@ -114,11 +118,32 @@ public class SpellType : MonoBehaviour
         L_NoMagic();
     }
 
+    public void RightMagicHand()
+    {
+        handSkinSwitcher.SetRightSkin(currentRightHandMagic);
+    }
+
+    public void RightHandNoMagic()
+    {
+        handSkinSwitcher.SetRightSkin(r_noMagicHand);
+    }
+
+    public void LeftMagicHand()
+    {
+        handSkinSwitcher.SetLeftSkin(currentLeftHandMagic);
+    }
+
+    public void LeftHandNoMagic()
+    {
+        handSkinSwitcher.SetLeftSkin(l_noMagicHand);
+    }
+
     public void R_NoMagic()
     {
         r_spellnumber = 0;
 
         handSkinSwitcher.SetRightSkin(r_noMagicHand);
+        currentRightHandMagic = r_noMagicHand;
 
         spellCastingAura.R_SmAura = r_NoAura1;
         spellCastingAura.R_MeAura = r_NoAura1;
@@ -134,6 +159,7 @@ public class SpellType : MonoBehaviour
         l_spellnumber = 0;
 
         handSkinSwitcher.SetLeftSkin(l_noMagicHand);
+        currentLeftHandMagic= l_noMagicHand;
 
         spellCastingAura.L_SmAura = l_NoAura1;
         spellCastingAura.L_MeAura = l_NoAura1;
@@ -148,7 +174,7 @@ public class SpellType : MonoBehaviour
     {
         r_spellnumber = 1;
 
-        handSkinSwitcher.SetRightSkin(r_fireHand);
+        currentRightHandMagic = r_fireHand;
         //this method makes the right hand spell casting magic as fire
         spellCastingAura.R_SmAura = r_FireAura1;
         spellCastingAura.R_MeAura = r_FireAura2;
@@ -163,7 +189,7 @@ public class SpellType : MonoBehaviour
     {
         l_spellnumber = 1;
 
-        handSkinSwitcher.SetLeftSkin(l_fireHand);
+        currentLeftHandMagic = l_fireHand;
 
         spellCastingAura.L_SmAura = l_FireAura1;
         spellCastingAura.L_MeAura = l_FireAura2;
@@ -178,7 +204,7 @@ public class SpellType : MonoBehaviour
     {
         r_spellnumber = 2;
 
-        handSkinSwitcher.SetRightSkin(r_iceHand);
+        currentRightHandMagic = r_iceHand;
 
         spellCastingAura.R_SmAura = r_IceAura1;
         spellCastingAura.R_MeAura = r_IceAura2;
@@ -193,7 +219,7 @@ public class SpellType : MonoBehaviour
     {
         l_spellnumber = 2;
 
-        handSkinSwitcher.SetLeftSkin(l_iceHand);
+        currentLeftHandMagic = l_iceHand;
 
         spellCastingAura.L_SmAura = l_IceAura1;
         spellCastingAura.L_MeAura = l_IceAura2;
@@ -208,7 +234,7 @@ public class SpellType : MonoBehaviour
     {
         r_spellnumber = 3;
 
-        handSkinSwitcher.SetRightSkin(r_lightningHand);
+        currentRightHandMagic = r_lightningHand;
 
         spellCastingAura.R_SmAura = r_LightningAura1;
         spellCastingAura.R_MeAura = r_LightningAura2;
@@ -223,7 +249,7 @@ public class SpellType : MonoBehaviour
     {
         l_spellnumber = 3;
 
-        handSkinSwitcher.SetLeftSkin(l_lightningHand);
+        currentLeftHandMagic = l_lightningHand;
 
         spellCastingAura.L_SmAura = l_LightningAura1;
         spellCastingAura.L_MeAura = l_LightningAura2;
@@ -239,7 +265,7 @@ public class SpellType : MonoBehaviour
     {
         r_spellnumber = 4;
 
-        handSkinSwitcher.SetRightSkin(r_gravityHand);
+        currentRightHandMagic = r_gravityHand;
 
         spellCastingAura.R_SmAura = r_GravityAura1;
         spellCastingAura.R_MeAura = r_GravityAura2;
@@ -254,7 +280,7 @@ public class SpellType : MonoBehaviour
     {
         l_spellnumber = 4;
 
-        handSkinSwitcher.SetLeftSkin(l_gravityHand);
+        currentLeftHandMagic = l_gravityHand;
 
         spellCastingAura.L_SmAura = l_GravityAura1;
         spellCastingAura.L_MeAura = l_GravityAura2;

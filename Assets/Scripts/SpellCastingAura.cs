@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using QCHT.Interactions.Core;
 using System.Diagnostics; // For Stopwatch
+using QCHT.Interactions.Hands;
 
 public class SpellCastingAura : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class SpellCastingAura : MonoBehaviour
     public XRHandTrackingManager handTrackingManager;
 
     [Header("Spell Launching")]
+    public SpellType spellType;
+
     public LaunchSpell leftHandSpellLauncher; // Assign in the Inspector
     public LaunchSpell rightHandSpellLauncher; // Assign in the Inspector
 
@@ -62,11 +65,13 @@ public class SpellCastingAura : MonoBehaviour
     {
         if (isLeftHand)
         {
+            spellType.LeftMagicHand();
             leftHandSpellChargeTimer.Restart();
             leftHandAudio.Play();
         }
         else
         {
+            spellType.RightMagicHand();
             rightHandSpellChargeTimer.Restart();
             rightHandAudio.Play();
         }
@@ -79,6 +84,7 @@ public class SpellCastingAura : MonoBehaviour
 
         if (isLeftHand)
         {
+            spellType.LeftHandNoMagic();
             leftHandSpellLevel = CalculateSpellLevel(leftHandSpellChargeTimer.Elapsed.TotalSeconds);
             leftHandSpellLauncher.PrepareSpell(true);
             leftHandSpellLauncher.Launch();
@@ -87,6 +93,7 @@ public class SpellCastingAura : MonoBehaviour
         }
         else
         {
+            spellType.RightHandNoMagic();
             rightHandSpellLevel = CalculateSpellLevel(rightHandSpellChargeTimer.Elapsed.TotalSeconds);
             rightHandSpellLauncher.PrepareSpell(false);
             rightHandSpellLauncher.Launch();

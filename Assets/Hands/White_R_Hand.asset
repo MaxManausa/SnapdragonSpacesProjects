@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: White_R_Hand
   m_EditorClassIdentifier: 
   MainMesh: {fileID: -4917019578530110846, guid: db865edcae3e5446490b99d0e6b790cd, type: 3}
-  MainMaterial: {fileID: 2100000, guid: 6fc730cb7140eeb42b70189a07fa16b2, type: 2}
+  MainMaterial: {fileID: 2100000, guid: 073210965fe4a8240b33e06caa3a1b06, type: 2}
   GhostMesh: {fileID: -4917019578530110846, guid: db865edcae3e5446490b99d0e6b790cd, type: 3}
   GhostMaterial: {fileID: 2100000, guid: 6c05f4a63d172470b80d36964d91f630, type: 2}
   hasFeedbacks: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Blue_L_Hand
   m_EditorClassIdentifier: 
   MainMesh: {fileID: 3342554514662406140, guid: 2c9340c6c24484cde8a139d528cc77f5, type: 3}
-  MainMaterial: {fileID: 2100000, guid: 0ab274de991948741850b56109439c48, type: 2}
+  MainMaterial: {fileID: 2100000, guid: fd3c2db4348f3b841850fbfca2032b25, type: 2}
   GhostMesh: {fileID: 3342554514662406140, guid: 2c9340c6c24484cde8a139d528cc77f5, type: 3}
   GhostMaterial: {fileID: 2100000, guid: 6c05f4a63d172470b80d36964d91f630, type: 2}
   hasFeedbacks: 0
