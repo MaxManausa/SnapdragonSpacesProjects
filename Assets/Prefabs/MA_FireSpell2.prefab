@@ -5050,6 +5050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endParticleSystem: {fileID: 19881100, guid: 87698b9d467306440a17655d9c528f3a, type: 3}
   projectile: {fileID: 4684788271220832530}
+  roundManager: {fileID: 0}
 --- !u!1 &5956332399285922808
 GameObject:
   m_ObjectHideFlags: 0

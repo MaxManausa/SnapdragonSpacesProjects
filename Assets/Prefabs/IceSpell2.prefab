@@ -241,3 +241,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endParticleSystem: {fileID: 8382091275368303237, guid: be8f97521c002d9458a9fedc120fdc0c, type: 3}
   projectile: {fileID: 4641979177927384613}
+  roundManager: {fileID: 0}

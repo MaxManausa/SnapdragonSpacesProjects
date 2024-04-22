@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class LaunchSpell : MonoBehaviour
 {
+    [SerializeField] private RoundManager roundManager;
     [SerializeField] private SpellCastingAura spellCasting;
 
     public GameObject Spell1;
@@ -49,6 +50,7 @@ public class LaunchSpell : MonoBehaviour
             rb.AddForce(launchPoint.forward * launchForce, ForceMode.VelocityChange);
         }
 
+        roundManager.IncrementSpellsCast();
         Destroy(launchedPrefab, 5f);
         // Reset prefabToLaunch to ensure PrepareSpell() is called before each launch
         prefabToLaunch = null;

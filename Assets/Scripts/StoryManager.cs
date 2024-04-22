@@ -10,6 +10,7 @@ public class StoryManager : MonoBehaviour
 {
     [Header("Other scripts")]
     [SerializeField] private DelayedActivator delayedActivator;
+    [SerializeField] private RoundManager roundManager;
     //[SerializeField] private MenuEnabler menuEnabler;
 
     [Header("Pop-Up UI Screens")]
@@ -172,10 +173,12 @@ public class StoryManager : MonoBehaviour
                 break;
             case 7:
                 delayedActivator.ActivateGameObject(quest1);
+                roundManager.StartQuest(quest1);
                // menuEnabler.MenusAreAllowed();
                 break;
             case 8:
-                SetQuestPassedText("You beat Quest 1! Data: Time till completion,\n targets hit 5/5, spells cast, accuracy,\n grade, based on time and accuracy.");
+                roundManager.ResetRound();
+                SetQuestPassedText("You have completed Fire Quest 1");
                 delayedActivator.ActivateGameObject(questPassedScreen);
                 break;
             case 9:
@@ -188,10 +191,12 @@ public class StoryManager : MonoBehaviour
                 break;
             case 11:
                 delayedActivator.ActivateGameObject(quest2);
-              //  menuEnabler.MenusAreAllowed();
+                roundManager.StartQuest(quest2);
+                // menuEnabler.MenusAreAllowed();
                 break;
             case 12:
-                SetQuestPassedText("You beat Quest 2! Data: Time till \ncompletion, targets hit 5/5, spells cast, \naccuracy, grade, based on time and accuracy.");
+                roundManager.ResetRound();
+                SetQuestPassedText("You have completed Fire Quest 2");
                 delayedActivator.ActivateGameObject(questPassedScreen);
                 break;
             case 13:
@@ -203,11 +208,13 @@ public class StoryManager : MonoBehaviour
                 delayedActivator.ActivateGameObject(challengeRequestScreen);
                 break;
             case 15:
+                roundManager.ResetRound();
                 delayedActivator.ActivateGameObject(challenge1);
+                roundManager.StartQuest(challenge1);
               //  menuEnabler.MenusAreAllowed();
                 break;
             case 16:
-                SetChallengePassedText("You passed the fire magic challenge! Data: \nTime till completion, targets hit 5/5, spells cast, accuracy, grade, based on time and accuracy.");
+                SetChallengePassedText("You passed the fire magic challenge!");
                 delayedActivator.ActivateGameObject(challengePassedScreen);
                 break;
             case 17:
