@@ -32,7 +32,7 @@ public class RoundManager : MonoBehaviour
 
 
     [Header("Real-Time Display")]
-    [SerializeField] private GameObject inGameStats;
+    public GameObject inGameStats;
     public Text realTimeText;
     public Text realTimeTargetsHitText;
 

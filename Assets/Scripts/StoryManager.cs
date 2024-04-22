@@ -129,6 +129,8 @@ public class StoryManager : MonoBehaviour
         challenge9.gameObject.SetActive(false);
         challenge10.gameObject.SetActive(false);
 
+        roundManager.inGameStats.SetActive(false);
+
         // Include any other UI components that need to be managed
     }
 
