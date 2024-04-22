@@ -97,7 +97,7 @@ public class StoryManager : MonoBehaviour
         //GoToChapter0();
     }
 
-    private void DeactivateAllScreens()
+    public void DeactivateAllScreens()
     {
         welcomeNoticeScreen.SetActive(false);
         noticeScreen.SetActive(false);

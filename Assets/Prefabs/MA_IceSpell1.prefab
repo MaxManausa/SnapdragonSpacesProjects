@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellAudio: {fileID: 682077363881323448}
-  spell_StartSound: {fileID: 8300000, guid: 3847e924853cfc74883d224cebb6fffb, type: 3}
+  spell_StartSound: {fileID: 8300000, guid: 48d7c4a57922d56448a2dc4f50d89fc9, type: 3}
 --- !u!114 &682077363881322565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,7 +242,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endParticleSystem: {fileID: 19880026, guid: e92ac9ce273026a4ca5f316d45c57e63, type: 3}
   projectile: {fileID: 682077363881323245}
-  roundManager: {fileID: 0}
 --- !u!1 &8229916306706946173
 GameObject:
   m_ObjectHideFlags: 0

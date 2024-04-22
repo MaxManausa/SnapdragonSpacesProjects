@@ -48,11 +48,19 @@ public class SpellType : MonoBehaviour
     [SerializeField] HandSkin r_gravityHand;
     [SerializeField] HandSkin l_gravityHand;
 
+    [Header("Spell Charging Sounds")]
+    [SerializeField] AudioClip noMagicSound;
+    [SerializeField] AudioClip fireSound;
+    [SerializeField] AudioClip iceSound;
+    [SerializeField] AudioClip lightningSound;
+    [SerializeField] AudioClip gravitySound;
+
 
     [Header("No Magic")]
     [SerializeField] GameObject noSpell1;
     [SerializeField] GameObject r_NoAura1;
     [SerializeField] GameObject l_NoAura1;
+    
 
     [Header("Fire Magic")]
     [SerializeField] GameObject fireSpell1;
@@ -152,6 +160,8 @@ public class SpellType : MonoBehaviour
         r_SpellLauncher.Spell1 = noSpell1;
         r_SpellLauncher.Spell2 = noSpell1;
         r_SpellLauncher.Spell3 = noSpell1;
+
+        spellCastingAura.rightHandAudio.clip = noMagicSound;
     }
 
     public void L_NoMagic()
@@ -168,6 +178,8 @@ public class SpellType : MonoBehaviour
         l_SpellLauncher.Spell1 = noSpell1;
         l_SpellLauncher.Spell2 = noSpell1;
         l_SpellLauncher.Spell3 = noSpell1;
+
+        spellCastingAura.leftHandAudio.clip = noMagicSound;
     }
 
     public void R_Fire()
@@ -183,6 +195,8 @@ public class SpellType : MonoBehaviour
         r_SpellLauncher.Spell1 = fireSpell1;
         r_SpellLauncher.Spell2 = fireSpell2;
         r_SpellLauncher.Spell3 = fireSpell3;
+
+        spellCastingAura.rightHandAudio.clip = fireSound;
     }
 
     public void L_Fire()
@@ -198,6 +212,8 @@ public class SpellType : MonoBehaviour
         l_SpellLauncher.Spell1 = fireSpell1;
         l_SpellLauncher.Spell2 = fireSpell2;
         l_SpellLauncher.Spell3 = fireSpell3;
+
+        spellCastingAura.leftHandAudio.clip = fireSound;
     }
 
     public void R_Ice()
@@ -213,6 +229,8 @@ public class SpellType : MonoBehaviour
         r_SpellLauncher.Spell1 = iceSpell1;
         r_SpellLauncher.Spell2 = iceSpell2;
         r_SpellLauncher.Spell3 = iceSpell3;
+
+        spellCastingAura.rightHandAudio.clip = iceSound;
     }
 
     public void L_Ice()
@@ -228,6 +246,8 @@ public class SpellType : MonoBehaviour
         l_SpellLauncher.Spell1 = iceSpell1;
         l_SpellLauncher.Spell2 = iceSpell2;
         l_SpellLauncher.Spell3 = iceSpell3;
+
+        spellCastingAura.leftHandAudio.clip = iceSound;
     }
 
     public void R_Lightning()
@@ -243,6 +263,8 @@ public class SpellType : MonoBehaviour
         r_SpellLauncher.Spell1 = lightningSpell1;
         r_SpellLauncher.Spell2 = lightningSpell2;
         r_SpellLauncher.Spell3 = lightningSpell3;
+
+        spellCastingAura.rightHandAudio.clip = lightningSound;
     }
 
     public void L_Lightning()
@@ -258,6 +280,8 @@ public class SpellType : MonoBehaviour
         l_SpellLauncher.Spell1 = lightningSpell1;
         l_SpellLauncher.Spell2 = lightningSpell2;
         l_SpellLauncher.Spell3 = lightningSpell3;
+
+        spellCastingAura.leftHandAudio.clip = lightningSound;
     }
 
 
@@ -274,6 +298,8 @@ public class SpellType : MonoBehaviour
         r_SpellLauncher.Spell1 = gravitySpell1;
         r_SpellLauncher.Spell2 = gravitySpell2;
         r_SpellLauncher.Spell3 = gravitySpell3;
+
+        spellCastingAura.rightHandAudio.clip = gravitySound;
     }
 
     public void L_Gravity()
@@ -289,5 +315,7 @@ public class SpellType : MonoBehaviour
         l_SpellLauncher.Spell1 = gravitySpell1;
         l_SpellLauncher.Spell2 = gravitySpell2;
         l_SpellLauncher.Spell3 = gravitySpell3;
+
+        spellCastingAura.leftHandAudio.clip = gravitySound;
     }
 }
